@@ -1,0 +1,10 @@
+{
+  "namespace": "siteapi/v1/ucenter/",
+  "routes": [
+    {
+      "login/password/": {
+        "post": "siteapi.v1.ucenter.login.with_password"
+      }
+    }
+  ]
+}

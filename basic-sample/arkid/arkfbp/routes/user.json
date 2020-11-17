@@ -1,0 +1,10 @@
+{
+  "namespace": "siteapi/v1/user/",
+  "routes": [
+    {
+      "": {
+        "post": "siteapi.v1.user.create_user"
+      }
+    }
+  ]
+}

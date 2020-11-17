@@ -1,0 +1,7 @@
+arkfbpCliVersion: 0.0.3-rc
+arkfbpSpecVersion: 0.0.3.dev0
+created: 2020-10-02 17:27:05
+language: Python
+name: arkid
+type: Server
+framework: Django

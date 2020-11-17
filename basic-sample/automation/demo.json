@@ -1,0 +1,111 @@
+{
+  "name": "user",
+  "type": "table",
+  "module": {
+    "model_user": {
+      "model": "arkid_meta.models.user.User"
+    },
+    "util": {
+      "meta": "automation.util"
+    }
+  },
+  "meta": {
+    "items": {
+      "title": "查询结果列表",
+      "type": {
+        "array": {
+          "array_item": "user"
+        }
+      }
+    },
+    "data": {
+      "required": false,
+      "type": {
+        "object": {
+          "total": ".pagination.count",
+          "page": ".pagination.page",
+          "page_size": ".pagination.page_size",
+          "items": "items"
+        }
+      }
+    },
+    "user": {
+      "title": "用于返回的用户信息",
+      "required": true,
+      "type": {
+        "object": {
+          "id": "model_user.id",
+          "username": "model_user.username",
+          "nickname": "model_user.nickname"
+        }
+      }
+    }
+  },
+  "api": {
+    "user/": {
+      "post": {
+        "name": "新建用户",
+        "type": "create",
+        "request": {
+          "username": {
+            "src": "model_user.username"
+          },
+          "password": {
+            "src": "model_user.password"
+          },
+          "nickname": "model_user.nickname"
+        },
+        "response": {
+          "user": "user"
+        },
+        "debug": false
+      },
+      "get": {
+        "pagination": {
+          "enabled": true
+        },
+        "name": "查询用户列表",
+        "type": "retrieve",
+        "request": {
+          "page": ".pagination.page",
+          "page_size": ".pagination.page_size"
+        },
+        "response": {
+          "data": "data",
+          "error_code": "util.error_code",
+          "error_message": "util.error_message"
+        },
+        "debug": false
+      }
+    },
+    "user/<id>/": {
+      "index": {
+        "id": {
+          "src": "model_user.id"
+        }
+      },
+      "patch": {
+        "name": "更新用户",
+        "type": "update",
+        "debug": false,
+        "request": {
+          "nickname": {
+            "src": "model_user.username"
+          },
+          "password": {
+            "src": "model_user.password"
+          }
+        },
+        "response": {
+          "user": "user"
+        }
+      },
+      "delete": {
+        "name": "删除用户",
+        "type": "delete",
+        "debug": false,
+        "request": {}
+      }
+    }
+  }
+}
