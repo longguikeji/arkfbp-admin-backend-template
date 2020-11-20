@@ -13,18 +13,18 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+import os
+
 from django.contrib import admin
 from django.urls import path, include
-# from rest_framework.documentation import include_docs_urls
 from arkfbp.common.automation.core import MetaConfigs
 
 
-file_dir = '/Users/zhaozhengran/Development/Project/Python/arkid-demo/automation'
-
+file_dir = os.path.join(os.getcwd(), 'automation')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('arkid.auto_20201014_062020_migrate_urls')),
+    # path('', include('arkid.auto_20201014_062020_migrate_urls')),
     path('arkfbp-admin/', include(MetaConfigs(file_dir=file_dir).get_urls()))
 
 ]

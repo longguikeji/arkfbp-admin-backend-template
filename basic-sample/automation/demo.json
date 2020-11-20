@@ -9,6 +9,20 @@
       "meta": "automation.util"
     }
   },
+  "role": {
+    "anonymous": {
+      "title": "所有人",
+      "flow": ""
+    },
+    "logined_user": {
+      "title": "登录用户",
+      "flow": ""
+    },
+    "admin": {
+      "title": "管理员",
+      "flow": "siteapi.v1.permission.admin"
+    }
+  },
   "meta": {
     "items": {
       "title": "查询结果列表",
@@ -75,7 +89,10 @@
           "error_code": "util.error_code",
           "error_message": "util.error_message"
         },
-        "debug": false
+        "debug": false,
+        "permission": [
+          "admin"
+        ]
       }
     },
     "user/<id>/": {
