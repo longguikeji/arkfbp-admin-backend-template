@@ -1,0 +1,26 @@
+{
+  "name":"test",
+  "type":"form",
+  "module":{},
+  "meta":{
+    "result":{
+      "title":"测试结果",
+      "type":{
+        "string":{}
+      }
+    }
+  },
+  "api":{
+    "test/ifnode/":{
+      "get": {
+        "name":"测试IF节点",
+        "type": "custom",
+        "flow": "test.ifnode",
+        "request": {},
+        "response": {
+          "result": "result"
+        }
+      }
+    }
+  }
+}

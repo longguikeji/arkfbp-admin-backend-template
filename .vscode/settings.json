@@ -1,0 +1,11 @@
+{
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "driver": "SQLite",
+      "database": "${workspaceFolder:arkfbp-py-backend-samples}/basic-sample/db/db.sqlite3",
+      "name": "basic-sample"
+    }
+  ],
+  "sqltools.useNodeRuntime": true
+}

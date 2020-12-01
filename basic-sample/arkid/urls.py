@@ -17,7 +17,7 @@ import os
 
 from django.contrib import admin
 from django.urls import path, include
-from arkfbp.common.automation.core import MetaConfigs
+from arkfbp.common.django.app.automation.flows.core import MetaConfigs
 
 
 file_dir = os.path.join(os.getcwd(), 'automation')
@@ -25,6 +25,6 @@ file_dir = os.path.join(os.getcwd(), 'automation')
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('', include('arkid.auto_20201014_062020_migrate_urls')),
-    path('arkfbp-admin/', include(MetaConfigs(file_dir=file_dir).get_urls()))
+    path('', include(MetaConfigs(file_dir=file_dir).get_urls()))
 
 ]
