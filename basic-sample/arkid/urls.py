@@ -21,6 +21,7 @@ from arkfbp.common.django.app.automation.flows.core import MetaConfigs
 
 
 file_dir = os.path.join(os.getcwd(), 'automation')
+print(file_dir)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
